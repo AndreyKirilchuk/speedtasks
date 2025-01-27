@@ -4,7 +4,5 @@ function search()
 
     const rgb = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
 
-    const regex = new RegExp(`(${searchText})`, 'g');
-    
-    content.innerHTML = content.innerHTML.replace(regex, `<span style="background-color: ${rgb};">${searchText}</span>`);
+    content.innerHTML = content.innerText.replace(`${searchText}`, `<span style="background-color: ${rgb};">${searchText}</span>`);
 }
