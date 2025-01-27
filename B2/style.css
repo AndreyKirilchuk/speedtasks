@@ -1,0 +1,53 @@
+label{
+  display: flex;
+  align-items:center;
+}
+
+input[type="checkbox"]{
+  width: 15px;
+  height: 25px;
+  appearance: none;
+  border: 1px solid black;
+}
+
+label div{
+  display: flex;
+}
+
+@keyframes line{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.line{
+  position:absolute;
+  top: 10px;
+  left: 0;
+  height: 1px;
+  background: black;
+}
+
+.content{
+  position: relative;
+}
+
+
+input[type="checkbox"]:checked{
+  border:none;
+  content: url(img.png);
+}
+
+input[type="checkbox"]:checked + .content {
+  color: rgba(1,1,1,0.5);
+  font-style: italic;
+}
+
+input[type="checkbox"]:checked + .content .line{
+  animation: 0.5s line;
+  width: 100%;
+}
+
