@@ -1,0 +1,85 @@
+.scene{
+    width: 200px;
+    height: 200px;
+    margin: 250px auto;
+    perspective:600px;
+}
+
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.cube{
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    animation: rotate 10s infinite linear;
+}
+
+.cube .storona{
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    position: absolute;
+}
+
+.front{
+    transform: translateZ(100px);
+
+    div{
+        background-color: red;
+    }
+}
+
+.right{
+    transform: rotateY(90deg) translateZ(100px);
+
+    div{
+        background-color: orange;
+    }
+}
+
+.back{
+    transform: rotateY(180deg) translateZ(100px);
+
+    div{
+        background-color: yellow;
+    }
+}
+
+.left{
+    transform: rotateY(270deg) translateZ(100px);
+
+    div{
+        background-color: green;
+    }
+}
+
+.top{
+    transform: rotateX(90deg) translateZ(100px);
+
+    div{
+        background-color: blue;
+    }
+}
+
+.bottom{
+    transform: rotateX(-90deg) translateZ(100px);
+
+    div{
+        background-color: purple;
+    }
+}
+
+.cube div div{
+    border: 1px solid rgb(255, 255, 255);
+}
